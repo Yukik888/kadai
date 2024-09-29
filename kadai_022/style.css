@@ -2,16 +2,17 @@
 h1,p,body{
   margin:0px;
 }
+p,a {
+  font-size: 20px;
+}
+
 main{
   margin: 10px 10px;
-  display: flex;
-  justify-content: space-around;
+
 }
 #parent{
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  flex-direction: row; /* デフォルトで横並びにする */
   
 }
 .contents {
@@ -20,33 +21,13 @@ main{
   padding: 10px 15px;
   margin: 20px 0;
   text-align: center;
-  flex-grow: 1;
-}
-/* 768px以下のレイアウト（縦並び） */
-@media screen and (max-width: 768px) {
-  #parent{
-    flex-direction: column; /* 縦並び */
-    align-items: center;
-  }
-
-
-  h2 {
-    font-size: 30px;
-  }
-  p {
-    font-size: 25px;
-  }
 
 }
 
-
-
-h2{
+h2 {
   font-size: 25px;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-style: dotted;
-  text-decoration-color: rgb(236, 122, 122)
+  border-bottom: dotted 3px rgb(236, 122, 122);
+  position: relative;
 }
 h2::before{
   content:"●";
@@ -76,3 +57,19 @@ footer a:visited{
 footer a:hover{
   color: rgb(245, 178, 168);
 }
+
+
+  /* 768px以下のレイアウト（縦並び） */
+  @media screen and (max-width: 768px) {
+    #parent {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    h2 {
+      font-size: 30px;
+  }
+  p {
+      font-size: 25px;
+  }
+  }
